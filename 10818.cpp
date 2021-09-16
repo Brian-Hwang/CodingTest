@@ -1,31 +1,34 @@
 #include <stdio.h>
 #include <iostream>
-#include <boost/algorithm/string.hpp>
 #include <vector>
 #include <climits>
 #include <string.h>
 using namespace std;
-using namespace boost;
 int main()
 {
     int num, min = INT_MAX, max = INT_MIN;
-    int *array;
     cin >> num;
+    cin.ignore(256, '\n');
     string input;
     std::getline(std::cin, input);
-    cout << input << endl;
-    vector<string> strs;
-    boost::split(strs, input, boost::is_any_of(" "));
-    cout << strs.size() << endl;
-    for (size_t i = 0; i < num; i++)
-    {
-        int num = stoi(strs[i]);
-        cout << strs[i] << endl;
-        if (num < min)
-            min = num;
-        if (num > max)
-            max = num;
-    }
+    input += '\n';
+    int start = 0U;
+    int place = input.find(" ");
 
+    while (place != string::npos)
+    {
+        int number = stoi(input.substr(start, place - start));
+        if (number < min)
+            min = number;
+        if (number > max)
+            max = number;
+        start = place + 1;
+        place = input.find(" ", start);
+    }
+    int number = stoi(input.substr(start, place - start));
+    if (number < min)
+        min = number;
+    if (number > max)
+        max = number;
     cout << min << " " << max << endl;
 }
