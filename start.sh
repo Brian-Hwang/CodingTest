@@ -1,7 +1,6 @@
 # !sh
 mkdir $1
-echo "
-#include <cstdio>
+echo "#include <cstdio>
 #include <iostream>
 
 using namespace std;
