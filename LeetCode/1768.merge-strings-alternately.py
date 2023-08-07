@@ -17,4 +17,11 @@ class Solution:
         return output_word
 
 
+# AI Solution
+# class Solution:
+# def mergeAlternately(self, word1: str, word2: str) -> str:
+# output = "".join(a + b for a, b in zip(word1, word2))
+# return output + word1[len(output) // 2 :] + word2[len(output) // 2 :]
+
+
 # @lc code=end
