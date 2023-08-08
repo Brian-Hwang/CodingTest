@@ -47,4 +47,15 @@ class Solution:
         return pattern * gcd
 
 
+# AI Solution
+# class Solution:
+#     def gcdOfStrings(self, str1: str, str2: str) -> str:
+#         shorter, longer = sorted([str1, str2], key = len)
+
+#         for i in range (len(shorter),0,-1):
+#             pattern = shorter[:i]
+#             if pattern * (len(shorter)/len(pattern)) == shorter and pattern * (len(longer)/len(pattern)) == longer:
+#                 return pattern
+
+#         return ""
 # @lc code=end
