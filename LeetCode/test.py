@@ -6,3 +6,4 @@ if any(item for item in c if item != ""):
     print(c)
 
 print(b * 3)
+print("HELLOHELLO" / b)
