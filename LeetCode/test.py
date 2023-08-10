@@ -10,6 +10,7 @@ if any(item for item in c if item != ""):
 print(b * 3)
 
 list = ["a", "b", "c", "d", "e"]
+print(list[-1])
 it = iter(list)
 for item in it:
     print(item)
