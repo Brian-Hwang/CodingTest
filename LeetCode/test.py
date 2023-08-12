@@ -13,3 +13,7 @@ list = ["a", "b", "c", "d", "e"]
 it = iter(list)
 for item in it:
     print(item)
+
+print("ASDF")
+for item in range(1, len(list) + 1, 1):
+    print(list[-item])
