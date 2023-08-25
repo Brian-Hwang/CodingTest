@@ -17,3 +17,9 @@ for item in it:
 print("ASDF")
 for item in range(1, len(list) + 1, 1):
     print(list[-item])
+
+
+for i in range(-5):
+    print(i)
+
+print(float(13) / 3)
