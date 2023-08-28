@@ -1,6 +1,7 @@
 a = "HELLOHELLOHELLO"
 b = "HELLO"
 list = [1, 2, 3, 4, 5]
+print(list[0:])
 print(max(list), len(list))
 c = a.split(b)
 print(c, len(c))
