@@ -8,25 +8,29 @@
 # @lc code=start
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
-        final_max = current_max = index = 0
+        final_max = current_max = index = taken = zero_index = 0
+        zeros = []
         while index < len(nums):
             # if 1
             if nums[index] == 1:
                 current_max += 1
             # if 0
             else:
-                sub_index = 0
-                index += 1
-                while index < len(nums) and sub_index <= k:
-                    if nums[index] == 1:
-                        break
-                    elif sub_index == k - 1:
-                        final_max = max(final_max, current_max)
-                    index += 1
-                    sub_index += 1
+                if taken == k:
+                    zeros.append(index)
+                    final_max = max(final_max, current_max)
+                    current_max = index - (zeros[zero_index] + 1) + 1
+                    zero_index += 1
+                else:
+                    while index < len(nums) and nums[index] == 0 and taken < k:
+                        zeros.append(index)
+                        current_max += 1
+                        index += 1
+                        taken += 1
+                    index -= 1
             index += 1
 
-        return final_max
+        return max(final_max, current_max)
 
 
 # @lc code=end
