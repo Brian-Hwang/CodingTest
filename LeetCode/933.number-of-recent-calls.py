@@ -12,7 +12,10 @@ class RecentCounter:
 
     def ping(self, t: int) -> int:
         self.queue.append(t)
-        print(self.queue)
+        while self.queue and t - 3000 > self.queue[0]:
+            self.queue.pop(0)
+
+        return len(self.queue)
 
 
 # Your RecentCounter object will be instantiated and called as such:
