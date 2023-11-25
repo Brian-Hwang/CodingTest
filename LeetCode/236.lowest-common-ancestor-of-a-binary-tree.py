@@ -17,34 +17,21 @@ class Solution:
     def lowestCommonAncestor(
         self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
     ) -> "TreeNode":
-        self.found = False
-        self.final_ancestor_node = root
+        def dfs(node):
+            if not node or node == p or node == q:
+                return node
 
-        def dfs(node, ancestor):
-            if not node:
-                return
-            print(node.val)
+            left = dfs(node.left)
+            right = dfs(node.right)
 
-            if self.found:
-                if (self.found == "p" and node.val == q.val) or (
-                    self.found == "q" and node.val == p.val
-                ):
-                    self.final_ancestor_node = ancestor
-                    print(self.final_ancestor_node, ancestor)
-                    return
-            else:
-                if node.val == p.val:
-                    self.found = "p"
-                    ancestor = node
-                elif node.val == q:
-                    self.found = "q"
-                    ancestor = node
+            if left and right:
+                return node
+            elif left:
+                return left
+            elif right:
+                return right
 
-            dfs(node.left, ancestor)
-            dfs(node.right, ancestor)
-
-        dfs(root, root)
-        return self.final_ancestor_node
+        return dfs(root)
 
 
 # @lc code=end
