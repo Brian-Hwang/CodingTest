@@ -3,7 +3,7 @@
 Welcome to my GitHub repository 👨‍💻, where I navigate through the intriguing challenges from LeetCode and Baekjoon, the famous Korean coding platform.
 
 ## 🌟 About Me
-![Leetcode Stats](https://leetcard.jacoblin.cool/semiDragon)
+![Leetcode Stats](https://leetcard.jacoblin.cool/semiDragon?ext=heatmap)
 
 Hi, I'm Brian Hwang! A coding enthusiast, I'm deeply passionate about problem-solving and sharing my coding adventures. 🧠
 
