@@ -13,7 +13,6 @@ public:
         int tLen = t.length(), sLen = s.length();
         if (tLen < sLen)
             return false;
-
         for (int i = 0, j = 0; i < tLen || j == sLen; i++)
         {
             if (t[i] == s[j])
