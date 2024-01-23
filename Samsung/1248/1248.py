@@ -20,7 +20,6 @@ def get_lowest_tree(tree):
     first_it , second_it = first,second
 
     while True:
-        # print(first_it)
         first_it = tree[first_it][0]
         first_stack.append(first_it)
         if first_it == 1:
