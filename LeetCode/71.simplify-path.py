@@ -8,15 +8,19 @@
 # @lc code=start
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        print(path)
         components = path.split("/")
-        print(components)
 
-        ans = ""
+        direc = []
         for component in components:
-            ans += component + "/"
-        print(ans, ans[:-2])
-        return ans[:-2]
+            if component == "." or component == "":
+                continue
+            elif component == "..":
+                if len(direc) != 0:
+                    direc.pop()
+            else:
+                direc.append(component)
+
+        return "/" + "/".join(direc)
 
 
 # @lc code=end
