@@ -8,42 +8,18 @@
 # @lc code=start
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        if amount == 0:
-            return 0
-        coins = sorted(coins)
-        print(coins)
+        dp = [float("inf")] * (amount + 1)
+        dp[0] = 0
 
-        minimum = float("inf")
-        modular = deque()
-        for coin in reversed(coins):
+        for i in range(1, amount + 1):
+            for coin in coins:
+                if coin <= i:
+                    dp[i] = min(dp[i], dp[i - coin] + 1)
 
-            used = amount // coin
-            left = amount % coin
-            if used != 0 and left != 0:
-                modular.appendleft((left, used))
-            if left == 0:
-                minimum = min(minimum, used)
-        while modular:
-            print(modular)
-            left, used = modular.pop()
-            for coin in reversed(coins):
-                new_used = left // coin
-                new_left = left % coin
-                print(new_left, new_used)
+        if dp[amount] == float("inf"):
+            dp[amount] = -1
 
-                # no diff
-                if new_used != 0:
-                    used += new_used
-                    left = new_left
-                    if left == 0:
-                        minimum = min(minimum, used)
-                    else:
-                        modular.appendleft((left, used))
-
-        if minimum != float("inf"):
-            return minimum
-        else:
-            return -1
+        return dp[amount]
 
 
 # @lc code=end
