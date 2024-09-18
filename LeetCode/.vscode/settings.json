@@ -4,6 +4,7 @@
   },
   "python.formatting.provider": "none",
   "files.associations": {
-    "string": "cpp"
+    "string": "cpp",
+    "vector": "cpp"
   }
 }
