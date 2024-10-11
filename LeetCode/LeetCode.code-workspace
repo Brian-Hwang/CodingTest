@@ -4,10 +4,5 @@
 			"name": "LeetCode",
 			"path": "."
 		}
-	],
-	"settings": {
-		"files.associations": {
-			"vector": "cpp"
-		}
-	}
+	]
 }
