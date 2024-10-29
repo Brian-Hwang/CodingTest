@@ -20,10 +20,12 @@ using namespace std;
 // So,
 //  1. Make an unordered_map
 //  2. start with 1 element (if no consec. exists)
-//  3. If consec exists, add to that key
+//  3. If consec exists, add to that key (check former and latter)
+//  4. if both former and latter exists, concat the two consecutives
 
-// ex) n= 5 => if we have 6,7,8 => (6,8) // (8,6)
-// ex2) n =5, we have 2,3,4 => (2,4) // (4,2)
+// ex) n= 5 => if we have 6,7,8 => (5,8) // (8,5)
+// ex2) n =5, we have 2,3,4 => (2,5) // (5,2)
+// ex3) n =5, we have 2,3,4 & 6,7,8 => (2,8) (8,2)
 
 class Solution
 {
